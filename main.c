@@ -1,18 +1,18 @@
 #include <stdio.h>
+#include <stdlib.h>
+#define SIZE 5
 
 int main(void)
 {
    int i;
-   int score[5];
+   int grade[SIZE];
 
-   score[0] = 100;
-   score[1] = 90;
-   score[2] = 80;
-   score[3] = 70;
-   score[4] = 60;
+   printf("5명의 점수를 입력하세요. \n");
+   for(i=0; i<SIZE; i++)
+       scanf("%d", &grade[i]);
 
-   for(i=0;i<5;i++)
-       printf("score[%d] = %d\n", i, score[i]);
-       
-    return 0;
+   for(i=0; i<SIZE; i++)
+       printf("grade[%d] = %d\n", i, grade[i]);
+
+   return 0;
 }
