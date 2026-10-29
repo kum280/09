@@ -1,21 +1,21 @@
 #include <stdio.h>
+#include <stdlib.h>
 #define SIZE 5
 
 int main(void)
 {
-   int i, average;
-   int sum;
+   int i;
    int grade[SIZE];
+   int score[SIZE];
 
-   sum = 0;
-   for(i=0; i<SIZE; i++)
-   {
-       printf("학생 성적을 입력하세요 : ");
-       scanf("%d", &grade[i]);
-       sum += grade[i];
-   }
-   average = sum / SIZE;
-   printf("성적 평균 : %d\n", average);
+   for (i=0; i<SIZE; i++)
+       grade[i] = rand() % 100;
+
+   for (i=0; i<SIZE; i++)       // 배열은 score = grade; 로 복사 불가, 요소별로 복사
+       score[i] = grade[i];
+
+   for (i=0; i<SIZE; i++)
+       printf("grade[%d] = %d, score[%d] = %d\n", i, grade[i], i, score[i]);
 
    return 0;
 }
